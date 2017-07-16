@@ -2,10 +2,9 @@ import sbt.Keys._
 
 name := "Scala Koans"
 
-
 lazy val commonSettings = Seq(
   version := "1.0",
-  scalaVersion := "2.11.8",
+  scalaVersion := "2.12.2",
   scalacOptions ++= Vector(
     "-deprecation",
     "-feature",
@@ -16,8 +15,7 @@ lazy val commonSettings = Seq(
     "-encoding", "UTF-8",
     "-target:jvm-1.8",
     "-unchecked",
-    "-Xexperimental",
-    "-Yopt:l:classpath"),
+    "-Xexperimental"),
   javacOptions ++= Vector(
     "-encoding", "UTF-8",
     "-source", "1.8",
@@ -26,8 +24,7 @@ lazy val commonSettings = Seq(
     "-Xlint:deprecation"),
   updateOptions := updateOptions.value.withCachedResolution(true))
 
-val ScalaTestVersion = "+"
-val AkkaVersion = "2.4.+"
+val ScalaTestVersion = "3.0.1"
 
 lazy val root = Project(
   id = "scala-koans",
@@ -36,18 +33,7 @@ lazy val root = Project(
   settings(
     //@formatter:off
     libraryDependencies ++= Seq(
-      "org.scalatest"           %% "scalatest-core"         % ScalaTestVersion % Test,
-      "org.scalatest"           %% "scalatest-funsuite"     % ScalaTestVersion % Test,
-      "org.scalatest"           %% "scalatest-junit"        % ScalaTestVersion % Test,
-      "org.scalatest"           %% "scalatest-flatspec"     % ScalaTestVersion % Test,
-      "org.scalatest"           %% "scalatest-wordspec"     % ScalaTestVersion % Test,
-      "org.scalatest"           %% "scalatest-featurespec"  % ScalaTestVersion % Test,
-      "org.scalatest"           %% "scalatest-propspec"     % ScalaTestVersion % Test,
-      "org.scalatest"           %% "scalatest-matchers"     % ScalaTestVersion % Test,
-
-      "com.typesafe.akka"       %% "akka-testkit"           % AkkaVersion % Test,
-      "com.typesafe.akka"       %% "akka-stream-testkit"    % AkkaVersion % Test,
-      "com.typesafe.akka"       %% "akka-http-testkit"      % AkkaVersion % Test),
+      "org.scalatest"           %% "scalatest"              % ScalaTestVersion % Test),
     //@formatter:on
     parallelExecution in Test := false,
     fork := true,
