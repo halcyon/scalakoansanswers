@@ -24,7 +24,7 @@ lazy val commonSettings = Seq(
     "-Xlint:deprecation"),
   updateOptions := updateOptions.value.withCachedResolution(true))
 
-val ScalaTestVersion = "3.0.1"
+val ScalaTestVersion = "3.0.5"
 
 lazy val root = Project(
   id = "scala-koans",
