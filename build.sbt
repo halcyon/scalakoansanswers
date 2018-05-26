@@ -49,4 +49,4 @@ lazy val macroSub = Project(
   settings(commonSettings: _*).
   settings(
     scalacOptions += "-language:experimental.macros",
-    libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-compiler" % _))
+    libraryDependencies += scalaVersion("org.scala-lang" % "scala-compiler" % _).value)
