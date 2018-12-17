@@ -4,7 +4,7 @@ name := "Scala Koans"
 
 lazy val commonSettings = Seq(
   version := "1.0",
-  scalaVersion := "2.12.6",
+  scalaVersion := "2.12.8",
   scalacOptions ++= Vector(
     "-deprecation",
     "-feature",

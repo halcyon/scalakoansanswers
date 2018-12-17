@@ -9,8 +9,8 @@ class AboutParentClasses extends KoanSuite {
         override val firstName: String, override val lastName: String,
         val employeeID: Long) extends Worker(firstName, lastName)
     val me = new Employee("Name", "Yourself", 1233)
-    me.firstName should be(__)
-    me.lastName should be(__)
+    me.firstName should be("Name")
+    me.lastName should be("Yourself")
   }
 
   koan("A class that extends from another is polymorphic") {
